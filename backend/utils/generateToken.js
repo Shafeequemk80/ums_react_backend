@@ -11,7 +11,6 @@ const generateToken=(res,userId)=>{
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production', // Ensure cookies are secure only in production
             sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Strict', // Ensure SameSite=None in production
-            domain: 'umsbackend.farado.store', // Set domain for the cookie
             path: '/', // Set path to root
             maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
         });
