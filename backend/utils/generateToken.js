@@ -7,11 +7,12 @@ const generateToken=(res,userId)=>{
     })
    
  if (token) {
-   console.log(token);
-   
     res.cookie('Jwt',token,{
+        httpOnly:true,
         secure:process.env.NODE_ENV !=="development",
         sameSite:'none',
+        domain:'ums-react-backend-code.onrender.com',
+        path:'/',
         maxAge:30 * 24 * 60 * 60 * 1000
     })
  }
