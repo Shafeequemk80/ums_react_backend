@@ -6,10 +6,12 @@ const generateToken=(res,userId)=>{
         expiresIn:"30d"
     })
    
+    console.log(process.env.NODE_ENV !=="development");
  if (token) {
+    
     res.cookie('Jwt',token,{
         httpOnly:true,
-        secure:process.env.NODE_ENV !=="development",
+        secure:true,
         sameSite:'none',
         domain:'ums-react-backend-code.onrender.com',
         path:'/',
