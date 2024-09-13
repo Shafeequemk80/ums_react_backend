@@ -17,7 +17,7 @@ const protect = asyncHandler(async (req, res, next) => {
     }
   } else {
     res.status(401);
-    throw new Error("thorized,no token");
+    throw new Error("unthorized,no token");
   }
 });
 export { protect };
